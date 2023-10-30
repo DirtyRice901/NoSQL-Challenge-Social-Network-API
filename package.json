@@ -1,0 +1,23 @@
+{
+  "name": "nosql-socialnework-api",
+  "version": "1.0.0",
+  "description": " build an API for a social network web application where users can share their thoughts, react to friends’ thoughts, and create a friend list. You’ll use Express.js for routing, a MongoDB database, and the Mongoose ODM. In addition to using the Express.jsLinks to an external site. and MongooseLinks to an external site. packages, you may also optionally use a JavaScript date library of your choice or the native JavaScript Date object to format timestamps.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DirtyRice901/NoSQL-Challenge-Social-Network-API.git"
+  },
+  "author": "Kevin Rice",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DirtyRice901/NoSQL-Challenge-Social-Network-API/issues"
+  },
+  "homepage": "https://github.com/DirtyRice901/NoSQL-Challenge-Social-Network-API#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
