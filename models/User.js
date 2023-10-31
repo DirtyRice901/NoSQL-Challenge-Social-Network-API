@@ -1,5 +1,5 @@
-///////////// establish User model /////////////////////////////////////////////////////////////////////////////////////////////
-const { Schema, model, Types } = require('mongoose');
+///////////// Importing required dependencies from the mongoose library /////////////////////////////////////////////////////////////////////////////////////////////
+const { Schema, model, } = require('mongoose');
 
 ///////////// establish User schema /////////////////////////////////////////////////////////////////////////////////////////////
 const userSchema = new Schema(
@@ -24,13 +24,13 @@ const userSchema = new Schema(
         thoughts: [
             {
                 type: Schema.Types.ObjectId,
-                ref: 'Thought'
+                ref: 'Thought',
             }
         ],
         friends: [
             {
                 type: Schema.Types.ObjectId,
-                ref: 'User'
+                ref: 'User',
             }
         ],
     },
@@ -46,7 +46,7 @@ const userSchema = new Schema(
 );
 
 ///////////// establish virtual for friend count /////////////////////////////////////////////////////////////////////////////////////////////
-UserSchema.virtual('friendCount').get(function () {
+userSchema.virtual('friendCount').get(function () {
     return this.friends.length;
 });
 
