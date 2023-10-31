@@ -10,6 +10,7 @@ const UserSchema = new Schema(
             required: 'Username is required!',
             trim: true
         },
+        //////////////   establish email validation /////////////////////////////////////////////////////////////////////////////////////////////
         email: {
             type: String,
             requred: true,
