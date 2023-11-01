@@ -1,5 +1,5 @@
 ////////////// import model files ///////////////////////////////////////////////////////////////////////////////////////////////
-const User = require('./User');//
+const User = require('./User');
 const Thought = require('./Thought');
 const Reaction = require('./Reaction');
 
