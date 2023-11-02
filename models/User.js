@@ -25,13 +25,13 @@ const userSchema = new Schema(
         //////////////   establish thoughts and friends /////////////////////////////////////////////////////////////////////////////////////////////
         thoughts: [
             {
-                type: Schema.Types.ObjectId,  
+                type: Schema.Types.ObjectId,  /// use ObjectId data type to create unique identifier MongoDB
                 ref: 'Thought',
             }
         ],
         friends: [
             {
-                type: Schema.Types.ObjectId,
+                type: Schema.Types.ObjectId, /// use ObjectId data type to create unique identifier MongoDB
                 ref: 'User',
             }
         ],
