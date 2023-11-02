@@ -1,6 +1,7 @@
 ///////////// Importing required dependencies from the mongoose library /////////////////////////////////////////////////////////////////////////////////////////////
 const { Schema, model, Types } = require('mongoose');
 
+
 ///////////// establish User schema /////////////////////////////////////////////////////////////////////////////////////////////
 const userSchema = new Schema(
     {
@@ -21,9 +22,10 @@ const userSchema = new Schema(
                 }
             }
         },
+        //////////////   establish thoughts and friends /////////////////////////////////////////////////////////////////////////////////////////////
         thoughts: [
             {
-                type: Schema.Types.ObjectId,
+                type: Schema.Types.ObjectId,  
                 ref: 'Thought',
             }
         ],
