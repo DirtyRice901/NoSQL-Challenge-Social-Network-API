@@ -1,9 +1,12 @@
 ////////////// use the apiRoutes /////////////////////////////////////////////////////////////////////////////
 const router = require('express').Router();
-const apiRoutes = require('./api');
-router.use('/api', apiRoutes);
-router.use('/', (req, res) => {
-    return res.status(404).send('Wrong route!')
-});
+
+////////////// import user and thought routes /////////////////////////////////////////////////////////////////////////////
+const userRoutes = require('./user-routes');
+const thoughtRoutes = require('./thought-routes');
+
+////////////// use the apiRoutes /////////////////////////////////////////////////////////////////////////////
+router.use('/users', userRoutes);   
+router.use('/thoughts', thoughtRoutes);
 
 module.exports = router;
