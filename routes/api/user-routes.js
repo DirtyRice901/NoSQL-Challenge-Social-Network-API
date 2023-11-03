@@ -5,9 +5,9 @@ const { ////////////// import functions from the user-controller /////////////
     getUserById,
     createUser,
     updateUserById,
-    deleteUser,
+    deleteUserById,
     addFriend,
-    deleteFriend
+    removeFriend
 } = require('../../controllers/user-controller');
 
 router.route('/').get(getAllUsers).post(createUser); // /api/users
