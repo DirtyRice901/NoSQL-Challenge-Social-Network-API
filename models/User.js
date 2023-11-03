@@ -1,5 +1,6 @@
 ///////////// Importing required dependencies from the mongoose schema /////////////////////////////////////////////////////////////////////////////////////////////
-const { Schema, model } = require('mongoose');
+const { Schema, model, Types } = require('mongoose');
+
 
 ///////////// establish User schema /////////////////////////////////////////////////////////////////////////////////////////////
 const userSchema = new Schema(
@@ -13,7 +14,7 @@ const userSchema = new Schema(
         //////////////   establish email validation /////////////////////////////////////////////////////////////////////////////////////////////
         email: {
             type: String,
-            requred: true,
+            required: true,
             unique: true,
             validate: {
                 validator: function (v) {
