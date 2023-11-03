@@ -12,8 +12,8 @@ const { ////////////// import functions from the user-controller /////////////
 
 router.route('/').get(getAllUsers).post(createUser); // /api/users
 
-router.route('/:userId').get(getUserById).put(updateUserById).delete(deleteUser); // /api/users/:userId
+router.route('/:userId').get(getUserById).put(updateUserById).delete(deleteUserById); // /api/users/:userId
 
-router.route('/:userId/friends/:friendId').post(addFriend).delete(deleteFriend); // /api/users/:userId/friends/:friendId
+router.route('/:userId/friends/:friendId').post(addFriend).delete(removeFriend); // /api/users/:userId/friends/:friendId
 
 module.exports = router;
