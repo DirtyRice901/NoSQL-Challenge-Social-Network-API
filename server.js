@@ -1,5 +1,6 @@
 ////////////// import express for routing /////////////////////////////////////////////////////////////////////////////////////////////////
 const express = require('express');
+require('dotenv').config(); // import dotenv for environment variables //
 const db = require('./config/connection'); 
 const routes = require('./routes');
 
