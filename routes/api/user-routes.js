@@ -12,8 +12,10 @@ const { ////////////// import functions from the user-controller /////////////
 
 router.route('/').get(getAllUsers).post(createUser); // /api/users
 
+////////////// get, update, and delete user by id ////////////////////////////////////////////////////////////////////////////////////////////////
 router.route('/:userId').get(getUserById).put(updateUserById).delete(deleteUserById); // /api/users/:userId
 
-router.route('/:userId/friends/:friendId').post(addFriend).delete(removeFriend); // /api/users/:userId/friends/:friendId
+////////////// add and remove friends ////////////////////////////////////////////////////////////////////////////////////////////////
+router.route('/:userId/friends/:friendId').post(addFriend).delete(removeFriend); 
 
 module.exports = router;
