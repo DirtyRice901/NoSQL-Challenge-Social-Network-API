@@ -17,23 +17,19 @@ const thoughtController = {
         }
     },
     ////////// get one thought by id ////////////////////////////////////////////////////////////////////////////////////////////////
-    async getThoughtsById(req, res) { //
-        // find thought by id
+    async getThoughtById(req, res) {
         try {
-            const thoughtDB = await Thought.findOne({ _id: req.params.thoughtID });
-            // if no thought found, return 404
+            const thoughtDB = await Thought.findOne({ _id: req.params.thoughtId });
             if (!thoughtDB) {
                 res.status(404).json({ message: 'No thought found with this id!' });
-                return;
-            } else {
-                // return thought
-                res.json(thoughtDB);
-            }   
-            // error handling
+            }
+
+            res.json(thoughtDB);
         } catch (err) {
             res.status(500).json(err);
         }
     },
+    
     ////////// create thought ////////////////////////////////////////////////////////////////////////////////////////////////
     async createThought(req, res) {
         try {
@@ -46,7 +42,7 @@ const thoughtController = {
     ////////// delete a thought ////////////////////////////////////////////////////////////////////////////////////////////////
     async deleteThought(req, res) {
         try {
-            const thoughtDB = await Thought.findOneAndDelete({ _id: req.params.thoughtID });
+            const thoughtDB = await Thought.findOneAndDelete({ _id: req.params.thoughtId });
             res.status(200).json(thoughtDB);
         } catch (err) {
             res.status(500).json(err);
@@ -55,7 +51,7 @@ const thoughtController = {
     ////////// update a thought by ID api endpoint ////////////////////////////////////////////////////////////////////////////////////////////////
     async updateThoughtByID(req, res) {
         try {
-            const thoughtDB = await Thought.findOneAndUpdate(req.params.thoughtID, req.body, { new: true, });
+            const thoughtDB = await Thought.findOneAndUpdate(req.params.thoughtId, req.body, { new: true, });
             if (!thoughtDB) {
                 res.status(404).json({ message: 'No thought found with this id!' });
             }
@@ -70,7 +66,7 @@ const thoughtController = {
     async createReaction(req, res) {
         try {
             const thoughtDB = await Thought.findOneAndUpdate(
-                { _id: req.params.thoughtID },
+                { _id: req.params.thoughtId },
                 { $addToSet: { reactions: req.body } },
                 { new: true, runValidators: true }
             );
@@ -84,8 +80,8 @@ const thoughtController = {
     async deleteReaction(req, res) {
         try {
             const thoughtDB = await Thought.findOneAndUpdate(
-                { _id: req.params.thoughtID },
-                { $pull: { reactions: { reactionId: req.params.reactionID } } },
+                { _id: req.params.thoughtId },
+                { $pull: { reactions: { reactionId: req.params.reactionId } } },
                 { new: true, runValidators: true }
             );
 

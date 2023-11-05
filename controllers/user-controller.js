@@ -13,7 +13,7 @@ const userController = {
 
     ///////// GET ONE USER By ID //////////////////////
     getUserById(req, res) {
-        User.findById(req.params.userID)
+        User.findById(req.params.userId)
         .then(userData => res.json(userData))
         .catch(err => res.status(500).json(err));
     },
@@ -52,7 +52,7 @@ const userController = {
     ///////// ADD FRIEND //////////////////////////////
     addFriend(req, res) {
         User.findOneAndUpdate(
-            { _id: req.params.userID },
+            { _id: req.params.userId },
             { $addToSet: { friends: req.body.friendID || req.params.friendID } },
             { new: true }   
         )
@@ -68,7 +68,7 @@ const userController = {
     ///////// REMOVE FRIEND //////////////////////////////
     removeFriend(req, res) {
         User.findOneAndUpdate(
-            { _id: req.params.userID },
+            { _id: req.params.userId },
             { $pull: { friends: req.params.friendID } },
             { new: true }   
         )    
