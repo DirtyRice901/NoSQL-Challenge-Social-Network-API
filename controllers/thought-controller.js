@@ -49,7 +49,7 @@ const thoughtController = {
         }
     },
     ////////// update a thought by ID api endpoint ////////////////////////////////////////////////////////////////////////////////////////////////
-    async updateThoughtByID(req, res) {
+    async updateThoughtById(req, res) {
         try {
           const thoughtDB = await Thought.findOneAndUpdate(
             { _id: req.params.thoughtId },
