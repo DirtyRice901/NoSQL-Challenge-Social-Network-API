@@ -51,16 +51,20 @@ const thoughtController = {
     ////////// update a thought by ID api endpoint ////////////////////////////////////////////////////////////////////////////////////////////////
     async updateThoughtByID(req, res) {
         try {
-            const thoughtDB = await Thought.findOneAndUpdate(req.params.thoughtId, req.body, { new: true, });
-            if (!thoughtDB) {
-                res.status(404).json({ message: 'No thought found with this id!' });
-            }
-
-            res.json(thoughtDB);
+          const thoughtDB = await Thought.findOneAndUpdate(
+            { _id: req.params.thoughtId },
+            req.body,
+            { new: true }
+          );
+          if (!thoughtDB) {
+            res.status(404).json({ message: 'No thought with this ID!' });
+            return;
+          }
+          res.json(thoughtDB);
         } catch (err) {
-            res.status(500).json(err);
+          res.status(500).json(err);
         }
-    },
+      },
 
     ////////// create reaction ////////////////////////////////////////////////////////////////////////////////////////////////
     async createReaction(req, res) {
