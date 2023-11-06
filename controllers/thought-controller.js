@@ -19,7 +19,7 @@ const thoughtController = {
     ////////// get one thought by id ////////////////////////////////////////////////////////////////////////////////////////////////
     async getThoughtById(req, res) {
         try {
-            const thoughtDB = await Thought.findOne({ _id: req.params.thoughtId });
+            const thoughtDB = await Thought.findById({ _id: req.params.thoughtId });
             if (!thoughtDB) {
                 res.status(404).json({ message: 'No thought found with this id!' });
             }
