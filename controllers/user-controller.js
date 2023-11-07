@@ -53,7 +53,7 @@ const userController = {
     addFriend(req, res) {
         User.findOneAndUpdate(
             { _id: req.params.userId },
-            { $addToSet: { friends: req.body.friendID || req.params.friendID } },
+            { $addToSet: { friends: req.body.friendId || req.params.friendId } },
             { new: true }   
         )
         .then(userData => {
@@ -69,7 +69,7 @@ const userController = {
     removeFriend(req, res) {
         User.findOneAndUpdate(
             { _id: req.params.userId },
-            { $pull: { friends: req.params.friendID } },
+            { $pull: { friends: req.params.friendId } },
             { new: true }   
         )    
         .then((dbUserData) => {
@@ -77,7 +77,7 @@ const userController = {
                 res.status(404).json({ message: 'No user found with this id!' });
             }
             ///////////////// CONFITMED FRIEND REMOVAL ///////////////////////
-            const removed = !dbUserData.friends.includes(req.params.friendID);
+            const removed = !dbUserData.friends.includes(req.params.friendId);
             if (removed) {
                 res.json({ message: 'Friend removed!', dbUserData });
             } else {
