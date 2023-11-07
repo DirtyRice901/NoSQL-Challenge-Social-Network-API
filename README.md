@@ -3,7 +3,7 @@
 ![licenseShield](https://img.shields.io/badge/license-MIT-yellow)
 
 # Description
-This challenge is to build the back end for an e-commerce site. I’ll take a working Express.js API and configure it to use Sequelize to interact with a MySQL database.
+This challenge is to build a back-end API for a social network web application. Users can create their thoughts, create a friends list and react to friends' thoughts. This app uses Express.js for routing, Mongoose ODM and MongDB database to hold data.
 
 ## Table of Contents
 * [Installation](#installation)
@@ -37,11 +37,10 @@ This challenge is to build the back end for an e-commerce site. I’ll take a wo
 ## Usage
 ### Screenshot
 
-![Alt text](Images/Products.png)
+Thought API![ThoughtAPI](Images/ThoughtAPI.png)
 
-![Alt text](<Images/Screenshot (27).png>)
+Users API![Alt text](Images/UserAPI.png)
 
-![Alt text](Images/tags.png)
 
 ### Walkthrough Video
 [Demonstration Video](https://drive.google.com/file/d/1FUP8le3zC8iXShvWUefCn6ML-aEcLdFL/view)
