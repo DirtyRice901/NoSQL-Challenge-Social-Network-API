@@ -23,8 +23,6 @@ This challenge is to build a back-end API for a social network web application. 
 
 * [NodeJS](https://nodejs.org/en/download)
 
-* [Nodemon](https://www.npmjs.com/package/nodemon)
-
 * [dotenv](https://www.npmjs.com/package/dotenv)
 
 * [MongoDB Compass](https://www.mongodb.com/products/tools/compass)
@@ -43,7 +41,7 @@ Users API![Alt text](Images/UserAPI.png)
 
 
 ### Walkthrough Video
-[Demonstration Video](https://drive.google.com/file/d/1FUP8le3zC8iXShvWUefCn6ML-aEcLdFL/view)
+[Demonstration Video](https://drive.google.com/file/d/1bcZyclfUpTfCZS1oBQhqSqtMBeDAfAvj/view)
 ## License
 ![MIT](https://img.shields.io/badge/license-MIT-yellow)
 
